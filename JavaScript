@@ -1,0 +1,45 @@
+// Dictionnaire de ton code secret
+const codeSecret = {
+    'a': 'æ',
+    'b': '∫',
+    'c': '¢',
+    'd': 'ª',
+    'e': '∂',
+    'f': 'ƒ',
+    'g': '©',
+    'h': '˙',
+    'i': 'π',
+    'j': '∆',
+    'k': '˚',
+    'l': ' ',
+    'm': 'µ',
+    'n': ' ',
+    'o': 'ø',
+    'p': '“',
+    'q': 'œ',
+    'r': '¶',
+    's': 'ß',
+    't': '™',
+    'u': ' ',
+    'v': '√',
+    'w': '∑',
+    'x': '»',
+    'y': '¥',
+    'z': '»'
+};
+
+// Fonction de traduction
+function translateText() {
+    let inputText = document.getElementById('textInput').value.toLowerCase();
+    let translated = '';
+
+    // On parcourt chaque caractère de l'entrée
+    for (let char of inputText) {
+        // On remplace la lettre par le symbole si elle existe dans le dictionnaire
+        if (codeSecret[char]) {
+            translated += codeSecret[char];
+        } else {
+            // Si la lettre n'est pas dans le code, on garde la lettre telle quelle (ex : espace, ponctuation)
+            translated += char;
+        }
+    }
